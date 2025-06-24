@@ -1,0 +1,106 @@
+@import "../../assets/scss/varialbes.scss";
+
+$sidebarWidth: calc(1 / 5 * 100%);
+
+.sidebar {
+  max-width: $sidebarWidth;
+  width: $sidebarWidth;
+  max-height: 100vh;
+  transition: margin-left 0.5s ease-in-out;
+  position: relative;
+  background-color: $dark_bg_light;
+
+  &.active {
+    margin-left: calc(-1 * $sidebarWidth * 0.8);
+  }
+
+  &__container {
+    width: 85%;
+    padding: 50px 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  &__active-btn {
+    width: 15%;
+    text-align: center;
+    font-size: 1.5em;
+    color: #fefefe;
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+
+  &__account,
+  &__panel {
+    width: 100%;
+  }
+
+  // Account
+  &__account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+
+    &__title {
+      font-weight: 700;
+      opacity: 0.8;
+      width: 100%;
+    }
+
+    &__btn {
+      background: $dark_bg_dark;
+      width: fit-content;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 40px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(110%);
+      }
+
+      &__img {
+        width: 32px;
+        height: 32px;
+        margin-right: 20px;
+        margin-left: -20px;
+      }
+
+      &__text {
+        font-weight: 600;
+        opacity: 0.9;
+      }
+    }
+  }
+
+  // Main menu, Projects
+  &__projects,
+  &__main-menu {
+    &__title {
+      font-weight: 700;
+      opacity: 0.8;
+      width: 100%;
+      margin-bottom: 5px;
+    }
+
+    &__list {
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      &__item {
+        transition: transform 0.5s ease;
+
+        &:hover {
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}
