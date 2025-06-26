@@ -2,7 +2,7 @@
 
 ## Intro
 
-I am Smurfov. And I wanted to development my own Task Mamager
+I am Smurfov. And I wanted to develop my own Task Mamager
 
 ## Stack
 
@@ -20,34 +20,35 @@ I am Smurfov. And I wanted to development my own Task Mamager
 - Make routes
 - Developed SideBar
 
+# 3 day
+
+- Add header with Page name
+
 # Install local
 
-1. You need the `bun`. This project not on the `npm`.
-
-```bash
-npm install -g bun
-```
-
-2. Git clone or download in zip file
+1. Git clone or download in zip file
 
 ```bash
 git clone git@github.com:smurfov/MyTaskManager.git
 ```
 
-3. Install dependecies
+2. Install dependecies
 
 ```bash
+npm install
 bun install
 ```
 
-4. Dev mode
+3. Dev mode
 
 ```bash
+npm run dev
 bun dev
 ```
 
-5. Build mode
+4. Build mode
 
 ```bash
+npm run prod
 bun prod
 ```
