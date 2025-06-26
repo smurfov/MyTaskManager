@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../shared/constants/routes";
 import "./Sidebar.scss";
-import { useState } from "react";
+import { useMoveSidebar } from "../../shared/hooks/useMoveSideBar";
 
 export function Sidebar() {
-  const [isActive, setIsActive] = useState(false);
+  // const [isActive, setIsActive] = useState(false);
+  const { isActive, handleHideSidebar } = useMoveSidebar();
 
   //TODO - Add styles for Account and Panel. And think about another buttons in panel or under "dashboard"
 
@@ -13,10 +14,7 @@ export function Sidebar() {
       <div className="sidebar__container">
         {/* Account */}
         <div className="sidebar__account">
-          <button
-            onClick={() => (isActive ? setIsActive(false) : setIsActive(true))}
-            className="sidebar__active-btn"
-          >
+          <button onClick={handleHideSidebar} className="sidebar__active-btn">
             {isActive ? "->" : "<-"}
           </button>
           <div className="sidebar__account__title">Account</div>

@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import { ROUTES } from "../shared/constants/routes";
-import { Home } from "../pages/Home/Home";
+import { Dashboard } from "../pages/Dashboard/Dashboard";
 import { Profile } from "../pages/Profile/Profile";
 import { Settings } from "../pages/Settings/Settings";
 import { Layout } from "../widgets/Layout/Layout";
@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path={ROUTES.home.path} element={<Home />} />
+          <Route path={ROUTES.home.path} element={<Dashboard />} />
           <Route path={ROUTES.profile.path} element={<Profile />} />
           <Route path={ROUTES.settings.path} element={<Settings />} />
           <Route path={ROUTES.project.path} element={<Project />} />

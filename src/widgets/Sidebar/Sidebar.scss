@@ -1,11 +1,9 @@
-@import "../../assets/scss/varialbes.scss";
-
-$sidebarWidth: calc(1 / 5 * 100%);
+@use "../../assets/scss/varialbes.scss" as *;
 
 .sidebar {
   max-width: $sidebarWidth;
   width: $sidebarWidth;
-  max-height: 100vh;
+  height: 100vh;
   transition: margin-left 0.5s ease-in-out;
   position: relative;
   background-color: $dark_bg_light;

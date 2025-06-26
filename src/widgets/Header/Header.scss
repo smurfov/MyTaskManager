@@ -1,0 +1,11 @@
+@use "../../assets/scss/varialbes.scss" as *;
+
+.header {
+  min-height: 50px;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 3rem;
+  font-weight: 600;
+  background: $dark_bg_dark;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+}

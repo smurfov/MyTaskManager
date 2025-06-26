@@ -1,7 +1,7 @@
 export const ROUTES = {
   home: {
     path: "/",
-    name: "Home Page",
+    name: "Dashboard",
   },
   profile: {
     path: "/profile",
@@ -16,7 +16,7 @@ export const ROUTES = {
     name: "Project",
   },
   team: {
-    path: "team",
+    path: "/team",
     name: "Team",
   },
 } as const;
