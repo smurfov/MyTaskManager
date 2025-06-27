@@ -1,6 +1,7 @@
 import { matchPath, useLocation } from "react-router-dom";
 import "./Header.scss";
 import { ROUTES } from "../../shared/constants/routes";
+import { ThemeToggle } from "./ThemeToggle/ThemeToggle";
 
 export function Header() {
   const { pathname } = useLocation();
@@ -13,7 +14,9 @@ export function Header() {
     <div className="header">
       <div className="header__title">{currentPage?.name}</div>
       {/* //NOTE - There must be theme toggle (dark/light mode) */}
-      {/* <div></div> */}
+      <div className="theme">
+        <ThemeToggle />
+      </div>
     </div>
   );
 }
