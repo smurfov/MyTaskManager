@@ -9,7 +9,7 @@ export function Layout() {
       <Sidebar />
       <div className="layout__outlet">
         <Header />
-        <div>
+        <div className="padding">
           <Outlet />
         </div>
       </div>

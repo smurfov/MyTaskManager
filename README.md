@@ -24,6 +24,10 @@ I am Smurfov. And I wanted to develop my own Task Mamager
 
 - Add header with Page name
 
+# 4 day
+
+- Add themes
+
 # Install local
 
 1. Git clone or download in zip file

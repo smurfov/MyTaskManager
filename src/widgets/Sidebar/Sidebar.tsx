@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../shared/constants/routes";
 import "./Sidebar.scss";
-import { useMoveSidebar } from "../../shared/hooks/useMoveSideBar";
+import { useMoveSidebar } from "../../shared/hooks/useMoveSidebar";
 
 export function Sidebar() {
   // const [isActive, setIsActive] = useState(false);
   const { isActive, handleHideSidebar } = useMoveSidebar();
-
-  //TODO - Add styles for Account and Panel. And think about another buttons in panel or under "dashboard"
 
   return (
     <div className={`sidebar ${isActive ? `active` : ""}`}>
@@ -21,7 +19,7 @@ export function Sidebar() {
           <Link className="sidebar__account__btn" to={ROUTES.profile.path}>
             <img
               className="sidebar__account__btn__img"
-              src="/img/profile icon.svg"
+              src={`/img/profile icon black.svg`}
               alt="profile icon"
             />
             <div className="sidebar__account__btn__text">Profile</div>
