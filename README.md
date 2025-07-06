@@ -28,6 +28,10 @@ I am Smurfov. And I wanted to develop my own Task Mamager
 
 - Add themes
 
+# 5 day
+
+- Add Task Items
+
 # Install local
 
 1. Git clone or download in zip file
