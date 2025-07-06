@@ -42,20 +42,33 @@
   }
 
   .bottom {
+    width: 100%;
     display: flex;
     flex-direction: row-reverse;
-  }
 
-  .button {
-    background-color: var(--color);
-    color: #fefefe;
-    padding: 5px 10px;
-    border-radius: 2rem;
+    .edit {
+      background-color: var(--color);
+      color: #fefefe;
+      padding: 5px 10px;
+      border-radius: 2rem;
+      color: var(--primary-text);
+      transition: transform 0.2s ease-in;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
 
   .delete {
     position: absolute;
     top: 5px;
     right: 10px;
+    color: var(--primary-text);
+    transition: transform 0.2s ease-in;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
