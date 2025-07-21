@@ -1,4 +1,4 @@
-import type { ITask } from '../../../shared/types/task.type'
+import type { ITask } from '@/shared/types/task.type'
 import './TaskItem.scss'
 
 interface Props {
@@ -8,16 +8,16 @@ interface Props {
 
 export function TaskItem({ task, handleDelete }: Props) {
 	return (
-		<div className='item'>
-			<div className='top'>
-				<div className='text'>
+		<div className="item">
+			<div className="top">
+				<div className="text">
 					{task.createdAt
 						? `Created At: ${task.createdAt}`
 						: `Updated At: ${task.updatedAt}`}
 				</div>
-				<div className='title'>{task.name}</div>
+				<div className="title">{task.name}</div>
 			</div>
-			<div className='content'>
+			<div className="content">
 				<div>Status: {task.status}</div>
 				{task.assignedTo && task.assignedTo.length > 0 && (
 					<div>
@@ -28,13 +28,13 @@ export function TaskItem({ task, handleDelete }: Props) {
 					</div>
 				)}
 			</div>
-			<div className='bottom'>
-				<button className='edit' onClick={() => {}}>
+			<div className="bottom">
+				<button className="edit" onClick={() => {}}>
 					Edit
 				</button>
 			</div>
 			<button
-				className='delete'
+				className="delete"
 				onClick={() => {
 					handleDelete(task)
 				}}

@@ -1,6 +1,6 @@
-import { useTaskState } from '../../../shared/stores/task.store'
-import type { ITask } from '../../../shared/types/task.type'
-import { TaskItem } from '../TaskItem/TaskItem'
+import { useTaskState } from '@/shared/stores/task.store'
+import type { ITask } from '@/shared/types/task.type'
+import { TaskItem } from '@/widgets/Tasks/TaskItem/TaskItem'
 import './TaskList.scss'
 
 export function TaskList() {
@@ -10,7 +10,7 @@ export function TaskList() {
 	}
 
 	return (
-		<div className='task-list'>
+		<div className="task-list">
 			{tasks &&
 				tasks.length > 0 &&
 				tasks.map(task => (

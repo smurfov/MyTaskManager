@@ -1,5 +1,5 @@
-import "./Team.scss";
+import './Team.scss'
 
 export function Team() {
-  return <div>Team</div>;
+	return <div>Team</div>
 }

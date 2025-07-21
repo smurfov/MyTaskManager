@@ -1,74 +1,74 @@
 .item {
-  width: 300px;
-  height: 200px;
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 2rem;
-  transition: transform 150ms ease-in;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: space-between;
-  gap: 2rem;
-  color: var(--primary-text);
-  position: relative;
+	width: 300px;
+	height: 200px;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 2rem;
+	transition: transform 150ms ease-in;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: space-between;
+	gap: 2rem;
+	color: var(--primary-text);
+	position: relative;
 
-  &:hover {
-    transform: scale(1.05);
-  }
+	&:hover {
+		transform: scale(1.05);
+	}
 
-  .top {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+	.top {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
 
-    .title {
-      font-size: 2rem;
-      font-weight: 800;
-    }
+		.title {
+			font-size: 2rem;
+			font-weight: 800;
+		}
 
-    .text {
-      opacity: 0.5;
-      font-size: 1.2rem;
-    }
-  }
+		.text {
+			opacity: 0.5;
+			font-size: 1.2rem;
+		}
+	}
 
-  .content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-  }
+	.content {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+	}
 
-  .bottom {
-    width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
+	.bottom {
+		width: 100%;
+		display: flex;
+		flex-direction: row-reverse;
 
-    .edit {
-      background-color: var(--color);
-      color: #fefefe;
-      padding: 5px 10px;
-      border-radius: 2rem;
-      color: var(--primary-text);
-      transition: transform 0.2s ease-in;
+		.edit {
+			background-color: var(--color);
+			color: #fefefe;
+			padding: 5px 10px;
+			border-radius: 2rem;
+			color: var(--primary-text);
+			transition: transform 0.2s ease-in;
 
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
-  }
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
 
-  .delete {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    color: var(--primary-text);
-    transition: transform 0.2s ease-in;
+	.delete {
+		position: absolute;
+		top: 5px;
+		right: 10px;
+		color: var(--primary-text);
+		transition: transform 0.2s ease-in;
 
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
 }

@@ -1,105 +1,124 @@
-@use "../../assets/scss/varialbes.scss" as *;
-
+@use '@/assets/scss/variables.scss' as *;
+@use '@/assets/scss/widthDevices.scss' as *;
 .sidebar {
-  max-width: $sidebarWidth;
-  width: $sidebarWidth;
-  height: 100vh;
-  transition: margin-left 0.5s ease-in-out, background-color 0.3s ease,
-    color 0.3s ease;
-  position: relative;
-  background-color: var(--bg-secondary);
+	width: $sidebarWidth;
+	height: 100vh;
+	transition:
+		margin-left 0.5s ease-in-out,
+		background-color 0.3s ease,
+		color 0.3s ease;
+	position: relative;
+	background-color: var(--bg-secondary);
 
-  &.active {
-    margin-left: calc(-1 * $sidebarWidth * 0.8);
-  }
+	&.active {
+		margin-left: calc(-1 * $sidebarWidth * 0.8);
 
-  &__container {
-    width: 85%;
-    padding: 50px 0 20px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-  }
+		@include for-max-width($mobile-large) {
+			margin-left: calc(-1 * 100% * 1);
+		}
+	}
 
-  &__active-btn {
-    width: 15%;
-    text-align: center;
-    font-size: 1.5em;
-    color: var(--primary-text);
-    position: absolute;
-    top: 10px;
-    right: 0;
-  }
+	&__container {
+		width: 85%;
+		padding: 50px 0 20px 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+	}
 
-  &__account,
-  &__panel {
-    width: 100%;
-  }
+	&__active-btn {
+		width: 15%;
+		text-align: center;
+		font-size: 1.5em;
+		color: var(--primary-text);
+		position: absolute;
+		top: 10px;
+		right: 0;
 
-  // Account
-  &__account {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 7px;
+		@include for-max-width($mobile-large) {
+			position: fixed;
+			top: 0;
+			left: -15px;
+		}
+	}
 
-    &__title {
-      font-weight: 700;
-      opacity: 0.8;
-      width: 100%;
-    }
+	&__account,
+	&__panel {
+		width: 100%;
+	}
 
-    &__btn {
-      background: var(--bg-primary);
-      width: fit-content;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 40px;
-      transition: transform 0.3s ease;
+	// Account
+	&__account {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 7px;
 
-      &:hover {
-        transform: scale(110%);
-      }
+		&__title {
+			font-weight: 700;
+			opacity: 0.8;
+			width: 100%;
+		}
 
-      &__img {
-        width: 32px;
-        height: 32px;
-        margin-right: 20px;
-        margin-left: -20px;
-      }
+		&__btn {
+			background: var(--bg-primary);
+			width: fit-content;
+			border-radius: 15px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 10px 40px;
+			transition: transform 0.3s ease;
 
-      &__text {
-        font-weight: 600;
-        opacity: 0.9;
-      }
-    }
-  }
+			&:hover {
+				transform: scale(110%);
+			}
 
-  // Main menu, Projects
-  &__projects,
-  &__main-menu {
-    &__title {
-      font-weight: 700;
-      opacity: 0.8;
-      width: 100%;
-      margin-bottom: 5px;
-    }
+			&__img {
+				width: 32px;
+				height: 32px;
+				margin-right: 20px;
+				margin-left: -20px;
+			}
 
-    &__list {
-      margin-left: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+			&__text {
+				font-weight: 600;
+				opacity: 0.9;
+			}
+		}
+	}
 
-      &__item {
-        transition: transform 0.5s ease;
+	// Main menu, Projects
+	&__projects,
+	&__main-menu {
+		&__title {
+			font-weight: 700;
+			opacity: 0.8;
+			width: 100%;
+			margin-bottom: 5px;
+		}
 
-        &:hover {
-          transform: translateX(5px);
-        }
-      }
-    }
-  }
+		&__list {
+			margin-left: 20px;
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+
+			&__item {
+				transition: transform 0.5s ease;
+
+				&:hover {
+					transform: translateX(5px);
+				}
+			}
+		}
+	}
+
+	@include for-max-width($mobile-large) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 50;
+		width: 100%;
+	}
 }

@@ -1,4 +1,4 @@
-import { createContext } from "react";
-import type { IThemeContext } from "../../types/theme.type";
+import { createContext } from 'react'
+import type { IThemeContext } from '@/shared/types/theme.type'
 
-export const ThemeContext = createContext<IThemeContext>({} as IThemeContext);
+export const ThemeContext = createContext<IThemeContext>({} as IThemeContext)

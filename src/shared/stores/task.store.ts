@@ -1,6 +1,6 @@
 import { create } from 'zustand'
-import type { ITask } from '../types/task.type'
-import { Tasks } from './../../data/task.data'
+import type { ITask } from '@/shared/types/task.type'
+import { Tasks } from '@/data/task.data'
 
 interface TaskState {
 	tasks: ITask[]
@@ -17,7 +17,7 @@ export const useTaskState = create<TaskState>(set => ({
 			const formatter = new Intl.DateTimeFormat('ru-RU', {
 				day: '2-digit',
 				month: '2-digit',
-				year: 'numeric',
+				year: 'numeric'
 			})
 			const formattedDate = formatter.format(date)
 
@@ -31,7 +31,7 @@ export const useTaskState = create<TaskState>(set => ({
 				description,
 				id: maxId + 1,
 				name: title,
-				status: 'not started',
+				status: 'not started'
 			}
 
 			return { tasks: [...state.tasks, newTask] }
@@ -39,7 +39,7 @@ export const useTaskState = create<TaskState>(set => ({
 	},
 	deleteTask: taskId => {
 		set(state => ({
-			tasks: state.tasks.filter(task => task.id !== taskId),
+			tasks: state.tasks.filter(task => task.id !== taskId)
 		}))
-	},
+	}
 }))

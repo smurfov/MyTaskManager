@@ -1,6 +1,6 @@
-import { AddTaskButton } from '../../features/Tasks/addTaskButton'
-import { useTaskState } from '../../shared/stores/task.store'
-import { TaskList } from '../../widgets/Tasks/TaskList/TaskList'
+import { AddTaskButton } from '@/features/Tasks/addTaskButton'
+import { useTaskState } from '@/shared/stores/task.store'
+import { TaskList } from '@/widgets/Tasks/TaskList/TaskList'
 import './Dashboard.scss'
 
 export function Dashboard() {
@@ -8,13 +8,14 @@ export function Dashboard() {
 
 	const handleAddTask = () => {
 		addTask('Zustand', 'Походу он работает')
+		//TODO - Make a modal for add a task
 	}
 
 	return (
 		<>
-			<div className='title'>My Tasks</div>
-			<div className='tasks'>
-				<AddTaskButton onClick={handleAddTask} type='button'>
+			<div className="title">My Tasks</div>
+			<div className="tasks">
+				<AddTaskButton onClick={handleAddTask} type="button">
 					Add Task
 				</AddTaskButton>
 				<TaskList />
@@ -22,5 +23,3 @@ export function Dashboard() {
 		</>
 	)
 }
-
-//NOTE - Imagine how will look Dashboard

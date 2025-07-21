@@ -1,18 +1,18 @@
-@use "../../assets/scss/varialbes.scss" as *;
+@use '../../assets/scss/variables.scss' as *;
 
 .header {
-  height: 50px;
-  width: 100%;
-  padding: 10px 20px;
-  font-size: 3rem;
-  font-weight: 600;
-  background: transparent;
-  transition: color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+	height: 50px;
+	width: 100%;
+	padding: 10px 20px;
+	font-size: 3rem;
+	font-weight: 600;
+	background: transparent;
+	transition: color 0.3s ease;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 
-  &__title {
-    width: 250px;
-  }
+	&__title {
+		width: 250px;
+	}
 }

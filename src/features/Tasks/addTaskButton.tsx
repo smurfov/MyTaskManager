@@ -7,7 +7,7 @@ type AddTaskButtonProps = {
 
 export function AddTaskButton({ children, ...rest }: AddTaskButtonProps) {
 	return (
-		<button className='task__button-add' {...rest}>
+		<button className="task__button-add" {...rest}>
 			{children}
 		</button>
 	)
