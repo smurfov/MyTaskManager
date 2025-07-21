@@ -11,6 +11,7 @@ I am Smurfov. And I wanted to develop my own Task Mamager
 - Vite
 - Axios
 - SCSS/SASS
+- Zustand
 
 (For that moment, that's all)
 
@@ -31,6 +32,12 @@ I am Smurfov. And I wanted to develop my own Task Mamager
 # 5 day
 
 - Add Task Items
+
+# 6 day
+
+- Create global store for tasks
+- Create functions for add and remove tasks
+- Some fixes
 
 # Install local
 
