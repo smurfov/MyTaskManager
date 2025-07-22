@@ -1,3 +1,5 @@
+@use '@/assets/scss/widthDevices.scss' as *;
+
 .layout {
 	width: 100%;
 	display: flex;
@@ -13,6 +15,10 @@
 
 		.padding {
 			padding: 0 30px;
+
+			@include for-max-width($mobile-large) {
+				padding: 0 15px;
+			}
 		}
 
 		&::-webkit-scrollbar {

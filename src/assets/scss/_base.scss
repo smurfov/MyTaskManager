@@ -19,8 +19,6 @@ body {
 	line-height: 1.5;
 	color: var(--primary-text);
 	background: var(--bg-primary);
-	@include transition(background-color, 0.3s, ease);
-	@include transition(color, 0.3s, ease);
 }
 
 h1,

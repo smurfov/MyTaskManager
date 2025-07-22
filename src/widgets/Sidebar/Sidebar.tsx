@@ -1,3 +1,4 @@
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import profileBlack from '@/assets/img/profile-icon-black.svg'
 import profileWhite from '@/assets/img/profile-icon-white.svg'
 import { ROUTES } from '@/shared/constants/routes'
@@ -17,7 +18,7 @@ export function Sidebar() {
 				{/* Account */}
 				<div className="sidebar__account">
 					<button onClick={handleHideSidebar} className="sidebar__active-btn">
-						{isActive ? '->' : '<-'}
+						{isActive ? <IoIosArrowBack /> : <IoIosArrowForward />}
 					</button>
 					<div className="sidebar__account__title">Account</div>
 					<Link className="sidebar__account__btn" to={ROUTES.profile.path}>

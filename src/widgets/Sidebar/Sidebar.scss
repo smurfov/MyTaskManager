@@ -3,19 +3,22 @@
 .sidebar {
 	width: $sidebarWidth;
 	height: 100vh;
-	transition:
-		margin-left 0.5s ease-in-out,
-		background-color 0.3s ease,
-		color 0.3s ease;
+	transition: margin-left 0.5s ease-in-out;
 	position: relative;
 	background-color: var(--bg-secondary);
+	margin-left: calc(-1 * $sidebarWidth * 0.8);
+
+	@include for-max-width($tablet) {
+		margin-left: calc(-1 * 100% * 1);
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 50;
+		width: 100%;
+	}
 
 	&.active {
-		margin-left: calc(-1 * $sidebarWidth * 0.8);
-
-		@include for-max-width($mobile-large) {
-			margin-left: calc(-1 * 100% * 1);
-		}
+		margin-left: 0;
 	}
 
 	&__container {
@@ -27,18 +30,20 @@
 	}
 
 	&__active-btn {
-		width: 15%;
-		text-align: center;
+		width: 24px;
+		height: 24px;
 		font-size: 1.5em;
 		color: var(--primary-text);
+		display: flex;
+		align-items: center;
 		position: absolute;
 		top: 10px;
-		right: 0;
+		right: 10px;
 
-		@include for-max-width($mobile-large) {
+		@include for-max-width($tablet) {
 			position: fixed;
-			top: 0;
-			left: -15px;
+			top: 5px;
+			right: calc(100% - 25px);
 		}
 	}
 
@@ -112,13 +117,5 @@
 				}
 			}
 		}
-	}
-
-	@include for-max-width($mobile-large) {
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 50;
-		width: 100%;
 	}
 }

@@ -1,6 +1,12 @@
+@use '@/assets/scss/widthDevices.scss' as *;
+
 .task-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 	gap: 20px;
 	place-items: center;
+
+	@include for-max-width($mobile-large) {
+		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	}
 }

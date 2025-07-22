@@ -15,6 +15,10 @@
 	color: var(--primary-text);
 	position: relative;
 
+	@include for-max-width($mobile-large) {
+		width: 260px;
+	}
+
 	&:hover {
 		transform: scale(1.05);
 
