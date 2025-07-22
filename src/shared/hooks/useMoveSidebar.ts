@@ -6,8 +6,6 @@ export function useMoveSidebar() {
 	const handleHideSidebar = () => {
 		if (isActive) setIsActive(false)
 		else setIsActive(true)
-
-		console.log(window.innerWidth)
 	}
 
 	return { isActive, handleHideSidebar }

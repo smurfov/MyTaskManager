@@ -1,23 +1,25 @@
-import { AddTaskButton } from '@/features/Tasks/addTaskButton'
-import { useTaskState } from '@/shared/stores/task.store'
+import { AddTaskButton } from '@/features/Tasks/AddTaskButton/AddTaskButton'
+import { useOpenModal } from '@/shared/hooks/useOpenModal'
+import { AddTaskModal } from '@/widgets/Modals/AddTaskModal/AddTaskModal'
 import { TaskList } from '@/widgets/Tasks/TaskList/TaskList'
+import { FaPlus } from 'react-icons/fa'
 import './Dashboard.scss'
 
 export function Dashboard() {
-	const addTask = useTaskState(state => state.addTask)
-
-	const handleAddTask = () => {
-		addTask('Zustand', 'Походу он работает')
-		//TODO - Make a modal for add a task
-	}
+	const { isOpen, handleTouchModal } = useOpenModal()
 
 	return (
 		<>
 			<div className="title">My Tasks</div>
 			<div className="tasks">
-				<AddTaskButton onClick={handleAddTask} type="button">
-					Add Task
+				<AddTaskButton
+					onClick={handleTouchModal}
+					className="flex center"
+					type="button"
+				>
+					<FaPlus style={{ marginRight: '7px' }} /> Add Task
 				</AddTaskButton>
+				{isOpen && <AddTaskModal closeModal={handleTouchModal} />}
 				<TaskList />
 			</div>
 		</>

@@ -13,6 +13,7 @@
 	--secondary-text: #fefefe;
 	--bg-primary: #fafafa;
 	--bg-secondary: #d8d8d8;
+	--border-color-primary: black;
 	--color: darkturquoise;
 }
 
@@ -21,4 +22,5 @@
 	--secondary-text: #333333;
 	--bg-primary: #171717;
 	--bg-secondary: rgb(43, 42, 42);
+	--border-color-primary: white;
 }

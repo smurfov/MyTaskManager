@@ -1,5 +1,5 @@
 .task__button-add {
-	width: 100px;
+	width: fit-content;
 	background-color: var(--color);
 	color: #fefefe;
 	padding: 5px 10px;
@@ -9,5 +9,14 @@
 
 	&:hover {
 		transform: scale(1.1);
+	}
+
+	&.flex {
+		display: flex;
+
+		&.center {
+			align-items: center;
+			justify-content: center;
+		}
 	}
 }
