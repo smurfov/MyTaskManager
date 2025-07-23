@@ -39,6 +39,12 @@ I am Smurfov. And I wanted to develop my own Task Mamager
 - Create functions for add and remove tasks
 - Some fixes
 
+# 7 day
+
+- Add Modal for add tasks
+- Add validation for form
+- Fix design
+
 # Install local
 
 1. Git clone or download in zip file
