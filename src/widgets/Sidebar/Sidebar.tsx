@@ -1,16 +1,25 @@
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
-import profileBlack from '@/assets/img/profile-icon-black.svg'
-import profileWhite from '@/assets/img/profile-icon-white.svg'
-import { ROUTES } from '@/shared/constants/routes'
-import { useMoveSidebar } from '@/shared/hooks/useMoveSidebar'
-import { useTheme } from '@/shared/hooks/useTheme'
-import { Link } from 'react-router-dom'
-import './Sidebar.scss'
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { Link } from 'react-router-dom';
+
+import './Sidebar.scss';
+import { MAIN_MENU_LINKS, PROJECTS_LINKS } from './lib/sidebar.data';
+import profileBlack from '@/assets/img/profile-icon-black.svg';
+import profileWhite from '@/assets/img/profile-icon-white.svg';
+import { ROUTES } from '@/shared/constants/routes';
+import { useCheckScreenWidth } from '@/shared/hooks/useCheckScreenWidth';
+import { useMoveSidebar } from '@/shared/hooks/useMoveSidebar';
+import { useTheme } from '@/shared/hooks/useTheme';
 
 export function Sidebar() {
-	// const [isActive, setIsActive] = useState(false);
-	const { isActive, handleHideSidebar } = useMoveSidebar()
-	const { theme } = useTheme()
+	const { isActive, handleHideSidebar } = useMoveSidebar();
+	const { theme } = useTheme();
+	const isMobile = useCheckScreenWidth();
+
+	const handleLinkClick = () => {
+		if (isMobile) {
+			handleHideSidebar();
+		}
+	};
 
 	return (
 		<div className={`sidebar ${isActive ? `active` : ''}`}>
@@ -21,7 +30,11 @@ export function Sidebar() {
 						{isActive ? <IoIosArrowBack /> : <IoIosArrowForward />}
 					</button>
 					<div className="sidebar__account__title">Account</div>
-					<Link className="sidebar__account__btn" to={ROUTES.profile.path}>
+					<Link
+						className="sidebar__account__btn"
+						to={ROUTES.profile.path}
+						onClick={handleLinkClick}
+					>
 						<img
 							className="sidebar__account__btn__img"
 							src={theme === 'dark' ? profileWhite : profileBlack}
@@ -34,51 +47,35 @@ export function Sidebar() {
 				<div className="sidebar__main-menu">
 					<div className="sidebar__main-menu__title">Main Menu</div>
 					<div className="sidebar__main-menu__list">
-						<Link
-							className="sidebar__main-menu__list__item"
-							to={ROUTES.home.path}
-						>
-							Dashboard
-						</Link>
-						<Link
-							className="sidebar__main-menu__list__item"
-							to={ROUTES.team.path}
-						>
-							Team
-						</Link>
-						<Link
-							className="sidebar__main-menu__list__item"
-							to={ROUTES.settings.path}
-						>
-							Settings
-						</Link>
+						{MAIN_MENU_LINKS.map(link => (
+							<Link
+								key={link.text}
+								className="sidebar__main-menu__list__item"
+								to={link.to}
+								onClick={handleLinkClick}
+							>
+								{link.text}
+							</Link>
+						))}
 					</div>
 				</div>
 				{/* Projects */}
 				<div className="sidebar__projects">
 					<div className="sidebar__projects__title">Projects</div>
 					<div className="sidebar__projects__list">
-						<Link
-							to={ROUTES.project.path}
-							className="sidebar__projects__list__item"
-						>
-							My Project
-						</Link>
-						<Link
-							to={ROUTES.project.path}
-							className="sidebar__projects__list__item"
-						>
-							Your Project
-						</Link>
-						<Link
-							to={ROUTES.project.path}
-							className="sidebar__projects__list__item"
-						>
-							Other Project
-						</Link>
+						{PROJECTS_LINKS.map(link => (
+							<Link
+								key={link.text}
+								to={link.to}
+								className="sidebar__projects__list__item"
+								onClick={handleLinkClick}
+							>
+								{link.text}
+							</Link>
+						))}
 					</div>
 				</div>
 			</div>
 		</div>
-	)
+	);
 }

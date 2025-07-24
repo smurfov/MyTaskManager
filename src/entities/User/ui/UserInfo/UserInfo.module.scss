@@ -1,0 +1,17 @@
+.userInfo {
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+}
+
+.userInfoItem {
+}
+
+.userInfoTitle {
+	font-size: 2.3rem;
+	font-weight: bold;
+}
+
+.userInfoInfo {
+	font-size: 1.7rem;
+}

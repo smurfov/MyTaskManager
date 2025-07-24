@@ -1,16 +1,15 @@
-import { AddTaskButton } from '@/features/Tasks/AddTaskButton/AddTaskButton'
-import { useTaskState } from '@/shared/stores/task.store'
 import { useState } from 'react'
 import { IoMdClose } from 'react-icons/io'
 import { toast } from 'react-toastify'
+
 import './AddTaskModal.scss'
+import { AddTaskButton } from '@/features/Tasks/AddTaskButton/AddTaskButton'
+import { useTaskState } from '@/shared/stores/task.store'
+import { useUIStore } from '@/shared/stores/ui.store'
 
-interface AddTaskModalProps {
-	closeModal: () => void
-}
-
-export function AddTaskModal({ closeModal }: AddTaskModalProps) {
-	const addTask = useTaskState(state => state.addTask)
+export function AddTaskModal() {
+	const { addTask } = useTaskState()
+	const { isAddTaskModalOpen, closeAddTaskModal } = useUIStore()
 
 	const [taskTitle, setTaskTitle] = useState<string>('')
 	const [taskDescription, setTaskDescription] = useState<string>('')
@@ -39,13 +38,18 @@ export function AddTaskModal({ closeModal }: AddTaskModalProps) {
 		setTaskTitle('')
 		setTaskDescription('')
 		toast.success('Task added successfully!')
-		closeModal()
+		closeAddTaskModal()
 	}
+
+	if (!isAddTaskModalOpen) return null
 
 	return (
 		<div className="add-task-modal">
 			<div className="add-task-modal__body">
-				<button onClick={closeModal} className="add-task-modal__btn-close">
+				<button
+					onClick={closeAddTaskModal}
+					className="add-task-modal__btn-close"
+				>
 					<IoMdClose />
 				</button>
 				<div className="add-task-modal__list">

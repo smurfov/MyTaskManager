@@ -1,0 +1,49 @@
+.updateUserForm {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	padding: 1rem;
+	border: 1px solid var(--border-color-primary);
+	border-radius: 1rem;
+}
+
+.updateUserFormItem {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.updateUserFormTitle {
+	font-weight: 600;
+	opacity: 0.8;
+}
+
+.updateUserFormInput {
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	border: 1px solid var(--border-color-primary);
+	background-color: var(--background-secondary);
+	color: var(--primary-text);
+	width: 100%;
+}
+
+.updateUserFormBtn {
+	align-self: flex-end;
+	padding: 0.5rem 1.5rem;
+	border-radius: 2rem;
+	background-color: var(--color);
+	color: var(--primary-text);
+	font-weight: 600;
+	transition: transform 0.2s ease-in-out;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+}
+
+.error {
+	color: #ff4d4f; // A standard error red color
+	font-size: 1.5rem;
+	margin-top: 0.25rem;
+	text-align: left;
+}

@@ -1,5 +1,5 @@
-import { useTheme } from '@/shared/hooks/useTheme'
 import './ThemeToggle.scss'
+import { useTheme } from '@/shared/hooks/useTheme'
 
 export function ThemeToggle() {
 	const { theme, toggleTheme } = useTheme()

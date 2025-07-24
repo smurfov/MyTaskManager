@@ -1,6 +1,6 @@
-import type { ITask } from '@/shared/types/task.type'
+import type { ITask } from '../model/task.type'
 
-export const Tasks: ITask[] = [
+export const taskMock: ITask[] = [
 	{
 		name: 'SADdassda',
 		id: 1,
@@ -57,4 +57,4 @@ export const Tasks: ITask[] = [
 		createdAt: '06.07.2025',
 		status: 'not started'
 	}
-] as const
+]

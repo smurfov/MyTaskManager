@@ -1,0 +1,32 @@
+@use '@/assets/scss/widthDevices.scss' as *;
+
+.profile {
+	width: 600px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	padding: 20px 0;
+	gap: 15px;
+
+	@include for-max-width($desktop) {
+		width: 400px;
+	}
+
+	@include for-max-width($mobile-large) {
+		width: 280px;
+	}
+
+	&__title {
+		font-size: 3.5rem;
+		font-weight: 900;
+
+		@include for-max-width($mobile-large) {
+			font-size: 2.5rem;
+		}
+	}
+
+	&-header {
+		display: flex;
+		justify-content: center;
+	}
+}

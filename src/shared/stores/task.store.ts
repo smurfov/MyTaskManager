@@ -1,6 +1,7 @@
 import { create } from 'zustand'
-import type { ITask } from '@/shared/types/task.type'
-import { Tasks } from '@/data/task.data'
+
+import type { ITask } from '@/entities/Task'
+import { taskMock } from '@/entities/Task/lib/task.mock'
 
 interface TaskState {
 	tasks: ITask[]
@@ -8,8 +9,15 @@ interface TaskState {
 	deleteTask: (taskId: number) => void
 }
 
+const getInitialTasks = () => {
+	if (import.meta.env.DEV) {
+		return taskMock
+	}
+	return []
+}
+
 export const useTaskState = create<TaskState>(set => ({
-	tasks: Tasks,
+	tasks: getInitialTasks(),
 	addTask: (title, description) => {
 		set(state => {
 			const timestamp = Date.now()

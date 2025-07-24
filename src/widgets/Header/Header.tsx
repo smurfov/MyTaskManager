@@ -1,7 +1,8 @@
 import { matchPath, useLocation } from 'react-router-dom'
-import { ROUTES } from '@/shared/constants/routes'
+
 import './Header.scss'
 import { ThemeToggle } from './ThemeToggle/ThemeToggle'
+import { ROUTES } from '@/shared/constants/routes'
 
 export function Header() {
 	const { pathname } = useLocation()

@@ -1,3 +1,8 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+import './App.scss'
 import { Dashboard } from '@/pages/Dashboard/Dashboard'
 import { Profile } from '@/pages/Profile/Profile'
 import { Project } from '@/pages/Project/Project'
@@ -6,10 +11,6 @@ import { Settings } from '@/pages/Settings/Settings'
 import { Team } from '@/pages/Team/Team'
 import { ROUTES } from '@/shared/constants/routes'
 import { Layout } from '@/widgets/Layout/Layout'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import './App.scss'
 
 function App() {
 	return (
