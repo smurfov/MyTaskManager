@@ -21,37 +21,42 @@ I am Smurfov. And I wanted to develop my own Task Manager
 - Make routes
 - Developed SideBar
 
-# 3 day
+## 3 day
 
 - Add header with Page name
 
-# 4 day
+## 4 day
 
 - Add themes
 
-# 5 day
+## 5 day
 
 - Add Task Items
 
-# 6 day
+## 6 day
 
 - Create global store for tasks
 - Create functions for add and remove tasks
 - Some fixes
 
-# 7 day
+## 7 day
 
 - Add Modal for add tasks
 - Add validation for form
 - Fix design
 
-# 8 day
+## 8 day
 
 - Create profile page
 - improve the operation of the sidebar
 - Did refactoring
 
-# Install local
+## 9 day
+
+- Create Projects page
+- Refactoring
+
+## Install local
 
 1. Git clone or download in zip file
 

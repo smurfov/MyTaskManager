@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom'
 
 import './Layout.scss'
 import { Header } from '@/widgets/Header/Header'
-import { AddTaskModal } from '@/widgets/Modals/AddTaskModal/AddTaskModal'
+import { ModalManager } from '@/widgets/Modals/ModalManager'
 import { Sidebar } from '@/widgets/Sidebar/Sidebar'
 
 export function Layout() {
@@ -15,7 +15,7 @@ export function Layout() {
 					<Outlet />
 				</div>
 			</div>
-			<AddTaskModal />
+			<ModalManager />
 		</div>
 	)
 }

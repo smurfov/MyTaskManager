@@ -1,0 +1,13 @@
+@use '@/assets/scss/widthDevices.scss' as *;
+
+.projects {
+	padding: 20px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.projectsTitle {
+	font-size: 3rem;
+	font-weight: 800;
+}

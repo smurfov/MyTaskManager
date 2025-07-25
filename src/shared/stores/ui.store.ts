@@ -1,13 +1,15 @@
 import { create } from 'zustand'
 
+export type ModalType = 'addTask' | 'addProject'
+
 type UIState = {
-	isAddTaskModalOpen: boolean
-	openAddTaskModal: () => void
-	closeAddTaskModal: () => void
+	activeModal: ModalType | null
+	openModal: (type: ModalType) => void
+	closeModal: () => void
 }
 
 export const useUIStore = create<UIState>(set => ({
-	isAddTaskModalOpen: false,
-	openAddTaskModal: () => set({ isAddTaskModalOpen: true }),
-	closeAddTaskModal: () => set({ isAddTaskModalOpen: false })
+	activeModal: null,
+	openModal: type => set({ activeModal: type }),
+	closeModal: () => set({ activeModal: null })
 }))

@@ -18,7 +18,7 @@ const getInitialTasks = () => {
 
 export const useTaskState = create<TaskState>(set => ({
 	tasks: getInitialTasks(),
-	addTask: (title, description) => {
+	addTask: (title, description, projectId = undefined) => {
 		set(state => {
 			const timestamp = Date.now()
 			const date = new Date(timestamp)
@@ -39,7 +39,8 @@ export const useTaskState = create<TaskState>(set => ({
 				description,
 				id: maxId + 1,
 				name: title,
-				status: 'not started'
+				status: 'not started',
+				projectId
 			}
 
 			return { tasks: [...state.tasks, newTask] }

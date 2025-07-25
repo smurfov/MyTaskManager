@@ -6,11 +6,12 @@ interface AssignedToTask {
 type TaskStatus = 'completed' | 'in progress' | 'not started'
 
 export interface ITask {
-	name: string
 	id: number
+	name: string
 	description: string
 	createdAt: string
 	updatedAt?: string
 	assignedTo?: AssignedToTask[]
 	status: TaskStatus
+	projectId?: number
 }

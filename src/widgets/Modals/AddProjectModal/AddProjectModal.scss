@@ -1,0 +1,21 @@
+@import '@/widgets/Modals/AddTaskModal/AddTaskModal.scss';
+
+.add-project-modal {
+	@extend .add-task-modal;
+
+	&__body {
+		@extend .add-task-modal__body;
+	}
+
+	&__btn-close {
+		@extend .add-task-modal__btn-close;
+	}
+
+	&__item {
+		@extend .add-task-modal__item;
+	}
+
+	&__btn-add {
+		@extend .add-task-modal__btn-add;
+	}
+}

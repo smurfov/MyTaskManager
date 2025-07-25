@@ -1,25 +1,35 @@
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import { Link } from 'react-router-dom';
+import { useState } from 'react'
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+import { Link } from 'react-router-dom'
 
-import './Sidebar.scss';
-import { MAIN_MENU_LINKS, PROJECTS_LINKS } from './lib/sidebar.data';
-import profileBlack from '@/assets/img/profile-icon-black.svg';
-import profileWhite from '@/assets/img/profile-icon-white.svg';
-import { ROUTES } from '@/shared/constants/routes';
-import { useCheckScreenWidth } from '@/shared/hooks/useCheckScreenWidth';
-import { useMoveSidebar } from '@/shared/hooks/useMoveSidebar';
-import { useTheme } from '@/shared/hooks/useTheme';
+import './Sidebar.scss'
+import { MAIN_MENU_LINKS } from './lib/sidebar.data'
+import profileBlack from '@/assets/img/profile-icon-black.svg'
+import profileWhite from '@/assets/img/profile-icon-white.svg'
+import { ROUTES } from '@/shared/constants/routes'
+import { useCheckScreenWidth } from '@/shared/hooks/useCheckScreenWidth'
+import { useMoveSidebar } from '@/shared/hooks/useMoveSidebar'
+import { useTheme } from '@/shared/hooks/useTheme'
+import { useProjectState } from '@/shared/stores/project.store'
 
 export function Sidebar() {
-	const { isActive, handleHideSidebar } = useMoveSidebar();
-	const { theme } = useTheme();
-	const isMobile = useCheckScreenWidth();
+	const { projects } = useProjectState()
+	const { isActive, handleHideSidebar } = useMoveSidebar()
+	const { theme } = useTheme()
+	const isMobile = useCheckScreenWidth()
+	const [isProjectsExpanded, setProjectsExpanded] = useState(false)
+
+	const projectsToShow = isProjectsExpanded ? projects : projects.slice(0, 3)
+
+	const handleToggleProjects = () => {
+		setProjectsExpanded(prevState => !prevState)
+	}
 
 	const handleLinkClick = () => {
 		if (isMobile) {
-			handleHideSidebar();
+			handleHideSidebar()
 		}
-	};
+	}
 
 	return (
 		<div className={`sidebar ${isActive ? `active` : ''}`}>
@@ -63,19 +73,27 @@ export function Sidebar() {
 				<div className="sidebar__projects">
 					<div className="sidebar__projects__title">Projects</div>
 					<div className="sidebar__projects__list">
-						{PROJECTS_LINKS.map(link => (
+						{projectsToShow.map(link => (
 							<Link
-								key={link.text}
-								to={link.to}
+								key={link.id}
+								to={`${ROUTES.projects.path}/${link.id}`}
 								className="sidebar__projects__list__item"
 								onClick={handleLinkClick}
 							>
-								{link.text}
+								{link.name}
 							</Link>
 						))}
 					</div>
+					{projects.length > 3 && (
+						<button
+							className="sidebar__projects__show-more"
+							onClick={handleToggleProjects}
+						>
+							{isProjectsExpanded ? 'Скрыть' : 'Показать еще'}
+						</button>
+					)}
 				</div>
 			</div>
 		</div>
-	);
+	)
 }

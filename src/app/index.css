@@ -14,7 +14,8 @@
 	--bg-primary: #fafafa;
 	--bg-secondary: #d8d8d8;
 	--border-color-primary: black;
-	--color: darkturquoise;
+	--bg-btn-primary: darkturquoise;
+	--bg-btn-secondary: #ff4d4f;
 }
 
 :root.dark {

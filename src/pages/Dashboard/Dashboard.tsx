@@ -9,7 +9,7 @@ export function Dashboard() {
 		<>
 			<div className="title">My Tasks</div>
 			<div className="tasks">
-				<AddTaskButton className="flex center" type="button">
+				<AddTaskButton className="primary flex center" type="button">
 					<FaPlus style={{ marginRight: '7px' }} /> Add Task
 				</AddTaskButton>
 				<TaskList />

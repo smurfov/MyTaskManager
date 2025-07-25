@@ -5,7 +5,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import './App.scss'
 import { Dashboard } from '@/pages/Dashboard/Dashboard'
 import { Profile } from '@/pages/Profile/Profile'
-import { Project } from '@/pages/Project/Project'
+import { ProjectDetails } from '@/pages/ProjectDetails/ProjectDetails'
+import { Projects } from '@/pages/Projects/Projects'
 import { Redirect } from '@/pages/Redirect/Redirect'
 import { Settings } from '@/pages/Settings/Settings'
 import { Team } from '@/pages/Team/Team'
@@ -21,7 +22,11 @@ function App() {
 					<Route path={ROUTES.home.path} element={<Dashboard />} />
 					<Route path={ROUTES.profile.path} element={<Profile />} />
 					<Route path={ROUTES.settings.path} element={<Settings />} />
-					<Route path={ROUTES.project.path} element={<Project />} />
+					<Route path={ROUTES.projects.path} element={<Projects />} />
+					<Route
+						path={ROUTES.projectDetail.path}
+						element={<ProjectDetails />}
+					/>
 					<Route path={ROUTES.team.path} element={<Team />} />
 					<Route path="*" element={<Redirect />} />
 				</Route>

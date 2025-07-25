@@ -11,9 +11,13 @@ export const ROUTES = {
 		path: '/settings',
 		name: 'Setting'
 	},
-	project: {
-		path: '/project',
-		name: 'Project'
+	projects: {
+		path: '/projects',
+		name: 'Projects'
+	},
+	projectDetail: {
+		path: '/projects/:projectId',
+		name: 'Project Page'
 	},
 	team: {
 		path: '/team',
