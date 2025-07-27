@@ -1,0 +1,65 @@
+@use '@/assets/scss/widthDevices.scss' as *;
+
+.projectsItem {
+	width: 300px;
+	height: 200px;
+	padding: 10px;
+	border: 1px solid var(--border-color-primary);
+	border-radius: 2rem;
+	transition: transform 150ms ease-in;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: space-between;
+	gap: 2rem;
+	color: var(--primary-text);
+	position: relative;
+
+	@include for-max-width($mobile-large) {
+		width: 260px;
+	}
+
+	&:hover {
+		transform: scale(1.05);
+
+		@include for-max-width($tablet) {
+			transform: none;
+		}
+	}
+}
+
+.projectsBottom {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.projectsTitle {
+	font-size: 2rem;
+	font-weight: 800;
+}
+
+.projectsBtnOpen {
+	background-color: var(--bg-btn-primary);
+	padding: 5px 10px;
+	border-radius: 2rem;
+	color: var(--primary-text);
+	transition: transform 0.2s ease-in;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+
+.projectsBtnDelete {
+	background-color: var(--bg-btn-secondary);
+	padding: 5px 10px;
+	border-radius: 2rem;
+	color: var(--primary-text);
+	transition: transform 0.2s ease-in;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+}

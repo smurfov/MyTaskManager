@@ -1,8 +1,10 @@
 import { memo } from 'react'
+import { Link } from 'react-router-dom'
 
 import type { IProject } from '../model/project.type'
 
 import styles from './ProjectItem.module.scss'
+import { ROUTES } from '@/shared/constants/routes'
 import { useProjectState } from '@/shared/stores/project.store'
 
 interface Props {
@@ -17,13 +19,20 @@ export const ProjectItem = memo(({ project }: Props) => {
 	}
 
 	return (
-		<div className={styles.item}>
-			<div className={styles.top}>
-				<div className={styles.title}>{project.name}</div>
-			</div>
-			<div className={styles.content}>
-				<div className={styles.bottom}></div>
-				<button className={styles.delete} onClick={handleDeleteClick}>
+		<div className={styles.projectsItem}>
+			<div className={styles.projectsTitle}>{project.name}</div>
+			<div className={styles.projectsBottom}>
+				<Link
+					className={styles.projectsBtnOpen}
+					to={`${ROUTES.projects.path}/${project.id}`}
+				>
+					Open
+				</Link>
+				<button
+					className={styles.projectsBtnDelete}
+					type="button"
+					onClick={handleDeleteClick}
+				>
 					Delete
 				</button>
 			</div>

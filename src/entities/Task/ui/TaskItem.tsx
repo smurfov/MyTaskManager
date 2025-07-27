@@ -41,10 +41,10 @@ export const TaskItem = memo(({ task }: Props) => {
 				<button className={styles.edit} onClick={() => {}}>
 					Edit
 				</button>
+				<button className={styles.delete} onClick={handleDeleteClick}>
+					Delete
+				</button>
 			</div>
-			<button className={styles.delete} onClick={handleDeleteClick}>
-				Delete
-			</button>
 		</div>
 	)
 })
