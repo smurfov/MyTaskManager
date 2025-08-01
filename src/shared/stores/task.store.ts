@@ -40,7 +40,12 @@ export const useTaskState = create<TaskState>(set => ({
 				id: maxId + 1,
 				name: title,
 				status: 'todo',
-				projectId
+				projectId,
+				priority: 'none',
+				deadline: '',
+				tags: [],
+				subtasks: [],
+				comments: []
 			}
 
 			return { tasks: [...state.tasks, newTask] }

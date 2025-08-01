@@ -3,6 +3,7 @@ import { memo } from 'react'
 import type { ITask } from '../model/task.type'
 
 import styles from './TaskItem.module.scss'
+import { useConfirm } from '@/shared/hooks/useConfirm'
 import { useTaskState } from '@/shared/stores/task.store'
 import { Button } from '@/shared/ui/Button/Button'
 
@@ -12,9 +13,13 @@ interface Props {
 
 export const TaskItem = memo(({ task }: Props) => {
 	const { deleteTask } = useTaskState()
+	const { confirm } = useConfirm()
 
-	const handleDeleteClick = () => {
-		deleteTask(task.id)
+	const handleDeleteClick = async () => {
+		const result = await confirm("Are you sure you're deleting your task?")
+		if (result) {
+			deleteTask(task.id)
+		}
 	}
 
 	return (

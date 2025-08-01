@@ -5,6 +5,7 @@ import type { IProject } from '../model/project.type'
 
 import styles from './ProjectItem.module.scss'
 import { ROUTES } from '@/shared/constants/routes'
+import { useConfirm } from '@/shared/hooks/useConfirm'
 import { useProjectState } from '@/shared/stores/project.store'
 
 interface Props {
@@ -13,9 +14,13 @@ interface Props {
 
 export const ProjectItem = memo(({ project }: Props) => {
 	const { deleteProject } = useProjectState()
+	const { confirm } = useConfirm()
 
-	const handleDeleteClick = () => {
-		deleteProject(project.id)
+	const handleDeleteClick = async () => {
+		const result = await confirm("Are you sure you're deleting your project?")
+		if (result) {
+			deleteProject(project.id)
+		}
 	}
 
 	return (

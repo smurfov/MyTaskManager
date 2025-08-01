@@ -1,0 +1,25 @@
+@use '@/widgets/Modals/AddTaskModal/AddTaskModal.scss' as add-task-modal;
+
+.confirm-modal {
+	@extend .add-task-modal;
+
+	&__body {
+		@extend .add-task-modal__body;
+		height: 250px;
+		width: 400px;
+	}
+
+	&__btn-close {
+		@extend .add-task-modal__btn-close;
+	}
+
+	&__btn-confirm {
+		@extend .add-task-modal__btn-add;
+	}
+
+	&__buttons {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
