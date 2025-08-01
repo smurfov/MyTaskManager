@@ -1,4 +1,4 @@
-@import '@/widgets/Modals/AddTaskModal/AddTaskModal.scss';
+@use '@/widgets/Modals/AddTaskModal/AddTaskModal.scss' as add-task-modal;
 
 .add-project-modal {
 	@extend .add-task-modal;
