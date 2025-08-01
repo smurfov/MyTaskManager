@@ -7,6 +7,7 @@
 	position: relative;
 	background-color: var(--bg-secondary);
 	margin-left: calc(-1 * $sidebarWidth * 0.8);
+	overflow-y: auto;
 
 	@include for-max-width($tablet) {
 		margin-left: calc(-1 * 100% * 1);
@@ -23,7 +24,7 @@
 
 	&__container {
 		width: 85%;
-		padding: 50px 0 20px 20px;
+		padding: 50px 0 50px 20px;
 		display: flex;
 		flex-direction: column;
 		gap: 50px;

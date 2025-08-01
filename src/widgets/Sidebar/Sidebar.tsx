@@ -2,8 +2,6 @@ import { useState } from 'react'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import { Link } from 'react-router-dom'
 
-import './Sidebar.scss'
-import { MAIN_MENU_LINKS } from './lib/sidebar.data'
 import profileBlack from '@/assets/img/profile-icon-black.svg'
 import profileWhite from '@/assets/img/profile-icon-white.svg'
 import { ROUTES } from '@/shared/constants/routes'
@@ -11,6 +9,8 @@ import { useCheckScreenWidth } from '@/shared/hooks/useCheckScreenWidth'
 import { useMoveSidebar } from '@/shared/hooks/useMoveSidebar'
 import { useTheme } from '@/shared/hooks/useTheme'
 import { useProjectState } from '@/shared/stores/project.store'
+import './Sidebar.scss'
+import { MAIN_MENU_LINKS } from './lib/sidebar.data'
 
 export function Sidebar() {
 	const { projects } = useProjectState()
@@ -32,7 +32,7 @@ export function Sidebar() {
 	}
 
 	return (
-		<div className={`sidebar ${isActive ? `active` : ''}`}>
+		<div className={`sidebar no-scrollbar ${isActive ? `active` : ''}`}>
 			<div className="sidebar__container">
 				{/* Account */}
 				<div className="sidebar__account">

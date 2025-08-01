@@ -399,3 +399,12 @@ video {
 [hidden] {
 	display: none;
 }
+
+/* Remove scrollbar styles in all browsers */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
