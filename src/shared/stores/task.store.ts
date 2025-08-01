@@ -39,7 +39,7 @@ export const useTaskState = create<TaskState>(set => ({
 				description,
 				id: maxId + 1,
 				name: title,
-				status: 'not started',
+				status: 'todo',
 				projectId
 			}
 
